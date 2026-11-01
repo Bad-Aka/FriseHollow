@@ -1,0 +1,114 @@
+/* Motion and launcher layout share the same reading/editing components. */
+.brand { padding: 0; background: none; }
+.app-shell { position: relative; }
+.topbar { position: relative; }
+.topbar::after { content: ""; position: absolute; bottom: -1px; left: 0; width: 44%; height: 1px; background: linear-gradient(90deg, var(--view-color), transparent); opacity: .65; transition: background .45s; }
+.breadcrumb strong { color: var(--view-color); transition: color .35s; }
+.sidebar .nav-item.active { color: var(--nav-color); background: linear-gradient(115deg, color-mix(in srgb, var(--nav-color) 17%, #101216), #15161a); border-color: color-mix(in srgb, var(--nav-color) 34%, #25262c); }
+.nav-item.active > small { color: var(--nav-color); background: color-mix(in srgb, var(--nav-color) 14%, transparent); }
+.page-heading, .reading-mode .page-heading { min-height: 236px; border-color: color-mix(in srgb, var(--view-color) 46%, #262832); background: radial-gradient(ellipse at 90% 20%, color-mix(in srgb, var(--view-color) 18%, transparent), transparent 64%), linear-gradient(105deg, #15181cee, #101216d9), var(--hollow-world, url('/hollow/bg-launcher-v3.1.png')) center / cover; view-transition-name: realm-banner; }
+.page-heading::before { content: ""; position: absolute; top: 0; left: 29px; width: 78px; height: 3px; background: var(--view-color); box-shadow: 0 0 24px color-mix(in srgb, var(--view-color) 60%, transparent); }
+.page-heading .eyebrow { display: flex; align-items: center; gap: 8px; color: var(--view-color); }
+.hero-chapter { color: #f4f5fa80; font-size: 8px; font-weight: 550; letter-spacing: 1px; padding-left: 11px; margin-left: 5px; border-left: 1px solid #ffffff25; }
+.hero-copy { animation: copy-arrive .48s cubic-bezier(.16, 1, .3, 1) both; }
+.page-heading .page-description { max-width: 490px; color: #c1c4ce; }
+.hero-footnote { color: #d5d7df; }
+.hero-footnote > svg { color: var(--view-color); }
+.hero-footnote-dot { width: 3px; height: 3px; background: var(--view-color); border-radius: 50%; margin: 0 5px; }
+.page-heading .hero-art { right: 35px; height: 226px; width: 237px; animation: character-arrive .65s cubic-bezier(.16, 1, .3, 1) both; }
+.realm-orbit { position: absolute; width: 235px; height: 235px; right: 33px; top: 13px; border: 1px solid color-mix(in srgb, var(--view-color) 27%, transparent); border-radius: 50%; box-shadow: 0 0 70px color-mix(in srgb, var(--view-color) 8%, transparent), inset 0 0 60px color-mix(in srgb, var(--view-color) 5%, transparent); pointer-events: none; }
+.realm-orbit::before { content: ""; position: absolute; inset: 15px; border: 1px dashed color-mix(in srgb, var(--view-color) 18%, transparent); border-radius: inherit; transform: rotate(30deg); }
+.realm-orbit::after { content: ""; position: absolute; top: 35px; right: 25px; width: 6px; height: 6px; border-radius: 50%; background: var(--view-color); box-shadow: 0 0 20px var(--view-color); }
+.view-tabs > button { overflow: hidden; }
+.view-tabs > button.selected { border-color: var(--nav-color); background: linear-gradient(120deg, color-mix(in srgb, var(--nav-color) 26%, #111318), color-mix(in srgb, var(--nav-color) 8%, #111318)); box-shadow: inset 0 -3px var(--nav-color), 0 7px 30px color-mix(in srgb, var(--nav-color) 8%, transparent); }
+.view-tabs > button.selected .region-label > strong, .view-tabs > button.selected .region-arrow { color: var(--nav-color); }
+.view-tabs > button.selected .region-count { color: #d5d8e0; }
+.view-tabs > button:hover .region-symbol { transform: translateY(-2px) rotate(-5deg); }
+.region-symbol { transition: transform .25s cubic-bezier(.2, .8, .2, 1); }
+.chronology { border-color: color-mix(in srgb, var(--view-color) 24%, #2b2e36); }
+.timeline-scroll { view-transition-name: archive-cards; }
+.timeline-canvas .event-position { animation: event-arrive .42s cubic-bezier(.16, 1, .3, 1) both; animation-delay: var(--entry-delay, 0ms); }
+.axis-line { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--view-color) 80%, #5b6070) 6%, color-mix(in srgb, var(--view-color) 38%, #4c5260) 93%, transparent); }
+.event-position .event-card { background: linear-gradient(125deg, color-mix(in srgb, var(--realm-color) 27%, #14171e), color-mix(in srgb, var(--realm-color) 9%, #11141b)); border-color: color-mix(in srgb, var(--realm-color) 65%, #34414b); }
+.event-position .event-card:hover, .event-position .event-card.chosen { background: linear-gradient(125deg, color-mix(in srgb, var(--realm-color) 38%, #14171e), color-mix(in srgb, var(--realm-color) 16%, #11141b)); box-shadow: 0 0 0 1px color-mix(in srgb, var(--realm-color) 50%, transparent), 0 12px 35px #0007, 0 0 30px color-mix(in srgb, var(--realm-color) 14%, transparent); }
+.event-position .event-card:active { transform: scale(.98); }
+.event-position .axis-node > span { background: var(--realm-color); }
+.live-dot { background: var(--view-color); box-shadow: 0 0 0 4px color-mix(in srgb, var(--view-color) 9%, transparent), 0 0 13px color-mix(in srgb, var(--view-color) 40%, transparent); }
+.journey-map { display: flex; align-items: center; gap: 20px; padding: 15px 22px; border-top: 1px solid #ffffff0a; background: #0b0d10; }
+.journey-label { display: flex; align-items: center; gap: 8px; color: #c2c7d2; font-size: 10px; white-space: nowrap; }
+.journey-label > svg { color: var(--view-color); }
+.journey-label > strong { font-variant-numeric: tabular-nums; color: var(--view-color); margin-left: 5px; font-size: 10px; }
+.journey-label i { font-style: normal; color: #6e7685; font-weight: 450; }
+.journey-track { position: relative; display: flex; justify-content: space-between; align-items: center; flex: 1; min-width: 100px; isolation: isolate; }
+.journey-track::before { content: ""; position: absolute; left: 6px; right: 6px; top: 50%; height: 1px; background: #333943; z-index: -1; }
+.journey-progress { position: absolute; top: 50%; left: 0; height: 1px; background: var(--view-color); z-index: -1; transition: width .12s linear; }
+.journey-stop { display: grid; place-items: center; width: 22px; height: 25px; background: transparent; padding: 3px; border-radius: 5px; }
+.journey-stop > span { display: block; width: 6px; height: 6px; background: #1d2530; border: 1px solid var(--realm-color); border-radius: 50%; transition: transform .18s, box-shadow .18s, background .18s; }
+.journey-stop.visited > span { background: var(--realm-color); }
+.journey-stop:hover > span, .journey-stop:focus-visible > span { transform: scale(1.65); background: var(--realm-color); box-shadow: 0 0 12px var(--realm-color); }
+.journey-end { color: #7f8796; font-size: 7px; letter-spacing: 1px; white-space: nowrap; }
+.detail-drawer { animation: drawer-arrive .32s cubic-bezier(.16, 1, .3, 1) both; }
+.drawer-scroll { animation: copy-arrive .28s ease both; }
+.detail-pagination { display: flex; align-items: center; gap: 10px; padding: 16px 22px; border-top: 1px solid #ffffff12; }
+.detail-pagination > button { flex: 1; display: flex; align-items: center; justify-content: center; gap: 5px; min-height: 36px; padding: 8px 10px; font-size: 10px; border-radius: 9px; }
+.detail-pagination > span { color: #979eab; font-size: 10px; font-variant-numeric: tabular-nums; min-width: 35px; text-align: center; }
+.modal[open] { animation: modal-arrive .24s cubic-bezier(.16, 1, .3, 1) both; }
+.modal::backdrop { animation: backdrop-arrive .24s both; }
+.icon-button:active:not(:disabled), .primary-button:active:not(:disabled), .secondary-button:active:not(:disabled) { transform: scale(.96); }
+
+@keyframes copy-arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes character-arrive { from { opacity: 0; transform: translateX(calc(35px * var(--travel-direction, 1))) scale(.94); } to { opacity: 1; transform: translateX(0) scale(1); } }
+@keyframes event-arrive { from { opacity: 0; translate: 22px 5px; } to { opacity: 1; translate: 0 0; } }
+@keyframes drawer-arrive { from { opacity: 0; transform: translateX(35px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes modal-arrive { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes backdrop-arrive { from { opacity: 0; } to { opacity: 1; } }
+::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+::view-transition-old(realm-banner), ::view-transition-old(archive-cards) { animation: realm-leave .22s ease both; }
+::view-transition-new(realm-banner), ::view-transition-new(archive-cards) { animation: realm-enter .42s cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes realm-leave { to { opacity: 0; transform: translateY(-8px); } }
+@keyframes realm-enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ?embed=1 removes duplicated navigation chrome inside the real launcher. */
+.launcher-embedded .sidebar { display: none; }
+.launcher-embedded .main-shell { margin-left: 0; }
+.launcher-embedded .topbar { height: 51px; padding: 0 24px; }
+.launcher-embedded main { max-width: none; padding: 20px 24px 0; }
+.launcher-embedded .page-heading { min-height: 211px; }
+.launcher-embedded .page-heading .hero-art { height: 204px; }
+.launcher-embedded .realm-orbit { width: 204px; height: 204px; }
+.launcher-embedded .below-timeline { margin-bottom: 24px; }
+.launcher-embedded .page-footer { display: none; }
+.launcher-embedded .toast { left: 50%; }
+
+@media (max-width: 1050px) { .journey-end { display: none; } .journey-map { gap: 16px; } .journey-label > span { display: none; } }
+@media (min-width: 721px) and (max-width: 1200px) {
+  .page-heading .hero-art { right: 12px; width: 190px; height: 220px; }
+  .realm-orbit { right: -5px; width: 210px; height: 210px; }
+}
+@media (min-width: 721px) and (max-width: 950px) {
+  .page-heading .hero-art { width: 158px; right: 1px; }
+  .realm-orbit { right: -28px; width: 195px; height: 195px; }
+  .hero-chapter { display: none; }
+  .launcher-embedded .hero-chapter { display: inline; }
+  .journey-map { padding-left: 16px; padding-right: 16px; }
+}
+@media (max-width: 720px) {
+  .page-heading, .reading-mode .page-heading { min-height: 226px; }
+  .page-heading .hero-art { width: 105px; height: 164px; right: 0; top: auto; bottom: 9px; }
+  .realm-orbit { width: 150px; height: 150px; right: -47px; top: 70px; }
+  .hero-chapter { display: none; }
+  .hero-footnote { flex-wrap: wrap; font-size: 7px; line-height: 1.6; }
+  .hero-footnote-dot { margin: 0 2px; }
+  .journey-map { display: none; }
+  .view-tabs > button.selected { box-shadow: inset 0 -2px var(--nav-color), 0 0 14px color-mix(in srgb, var(--nav-color) 7%, transparent); }
+  .launcher-embedded main { padding: 8px 14px 0; }
+  .launcher-embedded .topbar { padding: 0 15px; min-height: 50px; }
+  .launcher-embedded .page-heading { min-height: 222px; }
+  .launcher-embedded .page-heading .hero-art { height: 166px; }
+  .launcher-embedded .realm-orbit { width: 150px; height: 150px; }
+  .detail-pagination { padding: 13px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "file": "bg-launcher-v3.1.png",
+    "bytes": 768251,
+    "sha256": "a3d76ae6421c0832e0db1314ee5cbdfcdea097f1eeda9a04c9f2d7b7fe0d9203"
+  },
+  {
+    "file": "bird-1.png",
+    "bytes": 303492,
+    "sha256": "1474327c5c4eb26871e8490fa7bed1f83309b81a2c75e84cb00bc5ca24a45dfb"
+  },
+  {
+    "file": "bird-2.png",
+    "bytes": 343278,
+    "sha256": "9d482655539b31a22f7c5db8352c766624baf162e76909ae363fd44119ee6bda"
+  },
+  {
+    "file": "bird-3.png",
+    "bytes": 346360,
+    "sha256": "17bb01a74df74de3730c69d1b67632619587b5bdd7444e6246b55bf98c1f3750"
+  },
+  {
+    "file": "candidature.jpg",
+    "bytes": 258300,
+    "sha256": "36a40674ad74af669b4a36f61ed58bf53e6ab025aa409ac0b7b8bdaebe98cc3e"
+  },
+  {
+    "file": "logo-hollow-monochrome.png",
+    "bytes": 717224,
+    "sha256": "413f1844d0e2382e1beba6c9a1098208761ed710228b86792d1e82c617389a3a"
+  },
+  {
+    "file": "lore-background.jpg",
+    "bytes": 309866,
+    "sha256": "ef30c7b19084658250dcfb078d8a8a126529b10ceffc1bb1c425827cee46bc38"
+  },
+  {
+    "file": "lore-mascot.png",
+    "bytes": 1555743,
+    "sha256": "e25cb9cc79824ee698260271c18e80c15fc7c32d4b73b5ca16c5f6cf88a57c62"
+  },
+  {
+    "file": "mage-caster-v3.png",
+    "bytes": 1686045,
+    "sha256": "0371c4837d07428b7fcc2bf2f6d317e9a8a6ed13e9df8cb0db92e25dc263e7d9"
+  },
+  {
+    "file": "mage-caster-yellow.png",
+    "bytes": 872712,
+    "sha256": "cc43d098e58cdc57581f370eaffcb642671ac2427102cee0fbbfb1216150c5fb"
+  },
+  {
+    "file": "mascot-candidatures.png",
+    "bytes": 1629901,
+    "sha256": "45f4437dc3ea7b446015bb10520757daeab8344b725d29dccfa07d2b6f9b1482"
+  },
+  {
+    "file": "mascot-status-blink-v2.png",
+    "bytes": 1727906,
+    "sha256": "16f45ad3a7a9405c665351d8a65ecfe2dcee062e2fd3b9b6d0e1c98d796ebc5b"
+  },
+  {
+    "file": "mascot-status.png",
+    "bytes": 1769404,
+    "sha256": "1dca3aec2b31d1043d83d107cb9c3b48caa4a0b35e77c528920a851e72ceb161"
+  },
+  {
+    "file": "mascot.png",
+    "bytes": 1311246,
+    "sha256": "2e2cbe1ea30873b358d37af2e64c359905aadcbcaa77ca6f847db193e46510e9"
+  },
+  {
+    "file": "nav-home-v3.png",
+    "bytes": 1135079,
+    "sha256": "84a615be861e74c1d8f20c0a411da4784a82fb9a826b76bd9f87a32563ed5377"
+  },
+  {
+    "file": "reglement-background.jpg",
+    "bytes": 324829,
+    "sha256": "d20376dde78ed454ae5eefbdabb5780df065d54f95e2021b0cfde360e9d9a645"
+  },
+  {
+    "file": "whitelist-background-large.png",
+    "bytes": 2432233,
+    "sha256": "2cd646b7eb8d2d14f477dfc4faac4c4dda8ee381a3e8d88c5080407f902b052c"
+  },
+  {
+    "file": "whitelist-background.jpg",
+    "bytes": 161022,
+    "sha256": "80177b1f6194f270d58593fc43f7b4b3aac768b9f0fd106886aae171cef7dec1"
+  }
+]

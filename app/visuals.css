@@ -1,0 +1,65 @@
+/* Original Hollow artwork, fixed to the selected timeline. */
+.app-shell { background: linear-gradient(#08090b66, #08090b99), var(--hollow-world, url('/hollow/bg-launcher-v3.1.png')) center top / cover fixed, #08090b; }
+.chronology { background: #101114ed; }
+.sidebar { background: linear-gradient(180deg, #0e1013f5, #0a0b0df5); }
+.page-heading, .reading-mode .page-heading { min-height: 224px; border-color: color-mix(in srgb, var(--view-color) 34%, #303038); background: linear-gradient(100deg, color-mix(in srgb, var(--view-color) 9%, #111216), #111216cf), var(--hollow-world, url('/hollow/bg-launcher-v3.1.png')) center 52% / cover; }
+.page-heading .hero-copy { max-width: 70%; }
+.page-heading .realm-dot { background: var(--view-color); box-shadow: 0 0 12px color-mix(in srgb, var(--view-color) 45%, transparent); }
+.page-heading .hero-art { width: 225px; height: 215px; top: 4px; right: 24px; opacity: 1; pointer-events: none; mask-image: none; }
+.hero-illustration { position: relative; width: 100%; height: 100%; margin: 0; padding: 7px 0; }
+.hero-character { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; filter: drop-shadow(0 8px 15px #0007); animation: illustration-in .25s ease; pointer-events: none; }
+@keyframes illustration-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+.top-actions { gap: 11px; }
+.avatar .avatar-clover { width: 23px; height: 23px; object-fit: contain; }
+.sidebar .sidebar-note { display: flex; align-items: center; gap: 10px; padding-top: 26px; margin-bottom: 21px; }
+.sidebar-note > p { font-size: 10px; line-height: 1.8; }
+.status-mascot { position: relative; display: block; aspect-ratio: 1004 / 1464; flex-shrink: 0; }
+.status-mascot > img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.status-mascot .eyes-open { animation: eyes-open 8s step-end infinite; }
+.status-mascot .eyes-closed { position: absolute; inset: 0; opacity: 0; animation: eyes-closed 8s step-end infinite; }
+.sidebar-sentinel { width: 59px; }
+@keyframes eyes-open { 0%, 94%, 100% { opacity: 1; } 95% { opacity: 0; } }
+@keyframes eyes-closed { 0%, 94%, 100% { opacity: 0; } 95% { opacity: 1; } }
+.bird-companion { object-fit: contain; flex-shrink: 0; }
+.empty-state > .bird-companion { width: 105px; height: 102px; margin-bottom: 18px; filter: drop-shadow(0 7px 12px #0005); }
+.toast > .bird-companion { width: 42px; height: 42px; margin: -3px 0; }
+.help-welcome { display: flex; align-items: center; gap: 24px; padding: 18px 22px; border: 1px solid #363945; border-radius: 12px; background: linear-gradient(135deg, #222631, #14171e); }
+.help-welcome > img { display: block; width: 86px; height: 128px; object-fit: contain; flex-shrink: 0; }
+.help-welcome h3 { font-size: 17px; font-weight: 750; letter-spacing: -.3px; }
+.help-welcome p { color: #b4b7c3; font-size: 12px; line-height: 1.8; margin-top: 10px; }
+
+@media (max-width: 1200px) and (min-width: 721px) {
+  .page-heading .hero-art { width: 190px; right: 12px; }
+  .page-heading .hero-copy { max-width: 72%; }
+}
+@media (max-width: 950px) and (min-width: 721px) {
+  .page-heading .hero-art { width: 165px; top: 13px; right: 4px; height: 204px; }
+  .page-heading .hero-copy { max-width: 72%; }
+  .sidebar-sentinel { width: 44px; }
+  .sidebar .sidebar-note { gap: 7px; margin-left: 3px; margin-right: 3px; }
+  .sidebar-note > p { font-size: 9px; }
+}
+@media (max-height: 780px) and (min-width: 721px) {
+  .sidebar .sidebar-note { display: none; }
+}
+@media (max-width: 720px) {
+  .app-shell { background-attachment: scroll; }
+  .page-heading, .reading-mode .page-heading { min-height: 221px; padding: 22px 19px; }
+  .page-heading .hero-copy { max-width: 77%; }
+  .page-heading h1 { font-size: 27px; max-width: 240px; }
+  .page-heading .page-description { font-size: 10px; max-width: 215px; }
+  .page-heading .hero-art { width: 104px; height: 161px; top: auto; bottom: 10px; right: 2px; opacity: .92; }
+  .hero-illustration { padding: 0; }
+  .hero-character { filter: drop-shadow(0 3px 8px #0008); }
+  .top-actions { gap: 6px; }
+  .sidebar .sidebar-note { display: none; }
+  .help-welcome { gap: 14px; padding: 15px 12px; }
+  .help-welcome > img { width: 65px; height: 105px; }
+  .help-welcome h3 { font-size: 15px; }
+  .help-welcome p { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-mascot .eyes-open { opacity: 1; animation: none; }
+  .status-mascot .eyes-closed { display: none; animation: none; }
+}
