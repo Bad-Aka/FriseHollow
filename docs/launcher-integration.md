@@ -53,7 +53,7 @@ window.hollowChroniclesHost = {
 
 `nativeArchives`, `nativeFiles` et `currentUser` illustrent les services que l’équipe du launcher doit fournir ; ils ne sont pas de faux services inclus. `chooseBackup` et `saveBackup` sont facultatifs ; sans eux, les sélecteurs et téléchargements du navigateur sont utilisés. Le module valide chaque chronologie entrante et exige une confirmation de révision après sauvegarde. `canEdit: false` masque les commandes d’écriture ; l’autorisation doit également être contrôlée par le service natif. Ne pas fournir de pont natif à des pages externes ni de jeton administrateur au JavaScript.
 
-Pour conserver le stockage du site actuel, l’équipe doit intégrer un adaptateur authentifié correspondant à ses comptes ou utiliser les exports/imports. Le site hébergé reste privé avec sa connexion existante : le paramètre `embed=1` est une option de présentation, jamais un accès sans authentification.
+Pour conserver le stockage du site actuel, l’équipe doit intégrer un adaptateur authentifié correspondant à ses comptes ou utiliser les exports/imports. Le site hébergé est maintenant ouvert en lecture par son lien. Les commandes d’édition exigent la connexion du propriétaire et une autorisation vérifiée côté serveur. Le paramètre `embed=1` reste une option de présentation ; il ne donne aucun droit d’écriture.
 
 ## Vérifications réalisées et limite d’intégration
 

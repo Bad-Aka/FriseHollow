@@ -1,6 +1,6 @@
 import { playerBoardSchema, type Board } from "./timeline";
 
-export type TimelineSnapshot = { board: Board; revision: number };
+export type TimelineSnapshot = { board: Board; revision: number; canEdit?: boolean; authenticated?: boolean };
 export type TimelineTransport = {
   kind: "cloud" | "device" | "launcher";
   canEdit: boolean;
@@ -16,17 +16,17 @@ async function request(method: string, body?: unknown) {
     method, cache: "no-store",
     ...(body === undefined ? {} : { headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }),
   });
-  const payload = await result.json() as { error?: string; board?: unknown; revision?: number };
+  const payload = await result.json() as { error?: string; board?: unknown; revision?: number; canEdit?: boolean; authenticated?: boolean };
   if (!result.ok) throw new Error(payload.error || "La chronologie n’est pas disponible.");
   return payload;
 }
 
 export const cloudTransport: TimelineTransport = {
-  kind: "cloud", canEdit: true,
+  kind: "cloud", canEdit: false,
   async load() {
     const payload = await request("GET");
     if (typeof payload.revision !== "number" || !Number.isInteger(payload.revision)) throw new Error("Actualise la connexion aux archives.");
-    return { board: playerBoardSchema.parse(payload.board), revision: payload.revision };
+    return { board: playerBoardSchema.parse(payload.board), revision: payload.revision, canEdit: payload.canEdit === true, authenticated: payload.authenticated === true };
   },
   async save(board, revision) {
     const payload = await request("PUT", { board: playerBoardSchema.parse(board), revision });
